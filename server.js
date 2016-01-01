@@ -12,17 +12,14 @@ app.get('/', function(request, response) {
 });
 
 app.get('/ip', function (req, res) {
-// "ipaddress": "204.195.46.248",
-// "language": "en-US",
-// "software": "X11; Linux x86_64"
   var uaOS = parser(req.headers['user-agent']).os
+  //replace if ipv4
+  var ip = req.ip.replace(/^::ffff:/,'');
   var jsonResponse = {
-    "ipaddress": req.ip,
+    "ipaddress": ip,
     "language": req.acceptsLanguages()[0],
     "software": uaOS.name + ' ' + uaOS.version
   }
-  console.log(req.headers['user-agent'])
-  console.log(parser(req.headers['user-agent']).os)
   res.send(jsonResponse);
 });
 

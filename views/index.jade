@@ -1,0 +1,23 @@
+doctype html
+html(lang='en')
+  head
+    title Request Header Parser Microservice
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
+  body
+    .container
+      h1.header
+        | API Basejump: Request Header Parser Microservice
+      blockquote
+        | User stories:
+        ol
+          li 
+            | I can get the IP address, language and operating system for my browser.
+      h3 Example usage:
+      code https://cryptic-island-7330.herokuapp.com/ip
+      h3 Example output:
+      code
+        | {
+        | "ipaddress": "104.101.172.69",
+        | "language": "en-US",
+        | "software": "Linux x86_64"
+        | }
